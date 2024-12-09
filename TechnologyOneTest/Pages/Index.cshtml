@@ -4,55 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
-@* <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
-    <h1>Number to Words Converter</h1>
-    <input type="text" id="number" placeholder="Enter a number" oninput="validateCurrencyInput(event)"/>
-
-    <button onclick="convertToWords()">Convert</button>
-
-    <h2>Result:</h2>
-    <p id="result"></p>
-
-</div> 
-*@
-
-@* <div class="container mt-5">
-    <h1 class="text-center">Number to Words Converter</h1>
-    <form method="post" asp-page-handler="ConvertNumber">
-        <div class="mb-3">
-            <label for="number" class="form-label">Enter a number:</label>
-            <input type="text" asp-for="Number" class="form-control" id="number" placeholder="e.g., 123.45" />
-            <span class="text-danger">@Html.ValidationMessageFor(m => m.Number)</span>
-        </div>
-        <button type="submit" class="btn btn-primary">Convert</button>
-    </form>
-
-    @if (!string.IsNullOrEmpty(Model.Result))
-    {
-        <div class="mt-4 alert alert-success">
-            <h4>Result:</h4>
-            <p>@Model.Result</p>
-        </div>
-    }
-
-    @if (!ViewData.ModelState.IsValid)
-    {
-        foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-        {
-            <p class="text-danger">@error.ErrorMessage</p>
-        }
-    }
-</div> *@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <!-- Bootstrap 5 CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -70,7 +27,8 @@
 
                     <h1 class="h3 text-dark mb-4">Number to Words Converter</h1>
 
-                    <form method="post" asp-page-handler="ConvertNumber">
+                    <!-- Form for Local Conversion -->
+                    <form method="post" asp-page-handler="ConvertNumberLocal">
                         <div class="input-group mb-3">
                             <input type="text"
                                    asp-for="Number"
@@ -79,12 +37,40 @@
                                    oninput="validateCurrencyInput(event)"
                                    aria-label="Number Input" />
                             <button type="submit"
-                                    class="btn btn-primary">
-                                Convert
+                                    id="btnSubmitCNL"
+                                    onclick="btnSubmitCNL(event)"
+                                    class="btn btn-primary w-25">
+                                Convert Local
                             </button>
                         </div>
-                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Number)</span>
                     </form>
+
+
+                    <!-- Form for Database Conversion -->
+                    <form method="post" asp-page-handler="ConvertNumberDB">
+                        <div class="input-group mb-3">
+                            <input type="text"
+                                   asp-for="NumberDB"
+                                   class="form-control"
+                                   placeholder="Enter a number"
+                                   oninput="validateCurrencyInput(event)"
+                                   aria-label="Number Input" />
+                            <button type="submit"
+                                    id="btnSubmitCNDB"
+                                    onclick="btnSubmitCNDB(event)"
+                                    class="btn btn-primary w-25">
+                                Convert DB
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="ValidationMessageForNumber" class="text-danger">
+                        @Html.ValidationMessageFor(m => m.Number)
+                    </div>
+
+                    <div id="ValidationMessageForNumberDB" class="text-danger">
+                        @Html.ValidationMessageFor(s => s.NumberDB)
+                    </div>
 
                     @if (!string.IsNullOrEmpty(Model.Result))
                     {
@@ -94,73 +80,14 @@
                         </div>
                     }
 
-@*                     @if (!ViewData.ModelState.IsValid)
-                    {
-                        <div class="alert alert-danger mt-4">
-                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                            {
-                                <p>@error.ErrorMessage</p>
-                            }
-                        </div>
-                    } *@
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
 
-@* <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number to Words Converter</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
 
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-                <div class="card shadow-lg p-4">
-                    <h1 class="display-5 mb-3 text-primary">Welcome</h1>
-                    <p class="text-muted">
-                        Learn about <a href="https://learn.microsoft.com/aspnet/core" class="text-decoration-none">building Web apps with ASP.NET Core</a>.
-                    </p>
-
-                    <hr class="my-4">
-
-                    <h1 class="h3 text-dark mb-4">Number to Words Converter</h1>
-
-                    <div class="input-group mb-3">
-                        <input 
-                            type="text" 
-                            id="number" 
-                            class="form-control" 
-                            placeholder="Enter a number"
-                            oninput="validateCurrencyInput(event)" 
-                            aria-label="Number Input"
-                        />
-                        <button 
-                            onclick="convertToWords()" 
-                            class="btn btn-primary">
-                            Convert
-                        </button>
-                    </div>
-
-                    <div class="alert alert-info mt-4" id="result" style="display: none;">
-                        <!-- Conversion result will appear here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html> *@
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     function validateCurrencyInput(event) {
@@ -178,49 +105,65 @@
         console.log("value : ", validNumber);
     }
 
-    function convertToWords() {
-        const number = document.getElementById("number").value;
+    function btnSubmitCNL(event) {
+        const validationMessageLocal = document.getElementById("ValidationMessageForNumber");
+        const validationMessageDB = document.getElementById("ValidationMessageForNumberDB");
 
-        if (!number.trim()) {
-            const resultElement = document.getElementById("result");
-            resultElement.style.display = "block";
-            resultElement.textContent = "Please enter a value.";
-            resultElement.classList.remove("alert-info");
-            resultElement.classList.add("alert-danger");
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append("number", number);
-
-        fetch("https://localhost:44395/api/v1/apihandler/ConvertNumberToWords", {
-            method: "POST",
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log("result", data.words);
-                const resultElement = document.getElementById("result");
-                resultElement.style.display = "block";
-                if (data.words) {
-                    resultElement.textContent = `Converted: ${data.words}`;
-                    resultElement.classList.remove("alert-danger");
-                    resultElement.classList.add("alert-info");
-                } else {
-                    resultElement.textContent = `Error: ${data.message}`;
-                    resultElement.classList.remove("alert-info");
-                    resultElement.classList.add("alert-danger");
-                }
-            })
-            .catch(error => {
-                const resultElement = document.getElementById("result");
-                resultElement.style.display = "block";
-                resultElement.textContent = "An error occurred. Please try again.";
-                resultElement.classList.remove("alert-info");
-                resultElement.classList.add("alert-danger");
-            });
-
+        validationMessageLocal.hidden = false;
+        validationMessageDB.hidden = true;
     }
+
+    function btnSubmitCNDB(event) {
+        const validationMessageLocal = document.getElementById("ValidationMessageForNumber");
+        const validationMessageDB = document.getElementById("ValidationMessageForNumberDB");
+
+        validationMessageLocal.hidden = true;
+        validationMessageDB.hidden = false;
+    }
+
+    // function convertToWords() {
+    //     const number = document.getElementById("number").value;
+
+    //     if (!number.trim()) {
+    //         const resultElement = document.getElementById("result");
+    //         resultElement.style.display = "block";
+    //         resultElement.textContent = "Please enter a value.";
+    //         resultElement.classList.remove("alert-info");
+    //         resultElement.classList.add("alert-danger");
+    //         return;
+    //     }
+
+    //     const formData = new FormData();
+    //     formData.append("number", number);
+
+    //     fetch("https://localhost:44395/api/v1/apihandler/ConvertNumberToWords", {
+    //         method: "POST",
+    //         body: formData
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log("result", data.words);
+    //             const resultElement = document.getElementById("result");
+    //             resultElement.style.display = "block";
+    //             if (data.words) {
+    //                 resultElement.textContent = `Converted: ${data.words}`;
+    //                 resultElement.classList.remove("alert-danger");
+    //                 resultElement.classList.add("alert-info");
+    //             } else {
+    //                 resultElement.textContent = `Error: ${data.message}`;
+    //                 resultElement.classList.remove("alert-info");
+    //                 resultElement.classList.add("alert-danger");
+    //             }
+    //         })
+    //         .catch(error => {
+    //             const resultElement = document.getElementById("result");
+    //             resultElement.style.display = "block";
+    //             resultElement.textContent = "An error occurred. Please try again.";
+    //             resultElement.classList.remove("alert-info");
+    //             resultElement.classList.add("alert-danger");
+    //         });
+
+    // }
 
 </script>
 

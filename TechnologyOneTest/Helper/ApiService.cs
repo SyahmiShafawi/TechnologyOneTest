@@ -12,7 +12,7 @@ namespace TechnologyOneTest.Helper
             _baseUrl = appSettings.Value.BaseUrl;
         }
 
-        public async Task<string> ConvertNumberToWordsAsync(string number)
+        public async Task<string> ConvertNumberToWordsLocalAsync(string number)
         {
             using var httpClient = new HttpClient();
             var formData = new FormUrlEncodedContent(new[]
@@ -20,7 +20,31 @@ namespace TechnologyOneTest.Helper
             new KeyValuePair<string, string>("number", number)
         });
 
-            var response = await httpClient.PostAsync($"{_baseUrl}/api/v1/apihandler/ConvertNumberToWords", formData);
+            var response = await httpClient.PostAsync($"{_baseUrl}/api/v1/apihandler/ConvertNumberToWordsLocal", formData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var result = JsonSerializer.Deserialize<ConversionResponse>(responseContent, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return result?.Words ?? "Conversion failed.";
+            }
+
+            throw new Exception($"API call failed with status code: {response.StatusCode}");
+        }
+
+        public async Task<string> ConvertNumberToWordsDBAsync(string number)
+        {
+            using var httpClient = new HttpClient();
+            var formData = new FormUrlEncodedContent(new[]
+            {
+            new KeyValuePair<string, string>("number", number)
+        });
+
+            var response = await httpClient.PostAsync($"{_baseUrl}/api/v1/apihandler/ConvertNumberToWordsDB", formData);
 
             if (response.IsSuccessStatusCode)
             {

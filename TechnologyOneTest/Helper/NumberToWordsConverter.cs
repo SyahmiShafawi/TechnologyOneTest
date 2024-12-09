@@ -1,6 +1,6 @@
 ﻿namespace TechnologyOneTest.Helper
 {
-    public static class NumberToWordsConverter
+    public class NumberToWordsConverter
     {
         private static readonly string[] Units =
         { "ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE" };
@@ -15,20 +15,31 @@
         { "", "THOUSAND", "MILLION", "BILLION", "TRILLION", "QUADRILLION",
           "QUINTILLION", "SEXTILLION", "SEPTILLION", "OCTILLION", "NONILLION", "DECILLION" };
 
-        public static string ConvertToWords(decimal number)
+        private readonly ApplicationDbContext _context;
+        private readonly Dictionary<string, string> _wordCache;
+
+
+        public NumberToWordsConverter(ApplicationDbContext context)
+        {
+            _context = context;
+            _wordCache = _context.NumberWords
+                .ToDictionary(w => $"{w.Word}_{w.Category}", w => w.Word);
+        }
+
+        public static string ConvertToWordsLocal(decimal number)
         {
             if (number == 0) return "ZERO DOLLARS";
 
             var dollars = (long)number;
             var cents = (long)((number - dollars) * 100);
 
-            string dollarWords = dollars > 0 ? $"{ConvertWholeNumberToWords(dollars)} DOLLARS" : "";
-            string centWords = cents > 0 ? $"{ConvertWholeNumberToWords(cents)} CENTS" : "";
+            string dollarWords = dollars > 0 ? $"{ConvertWholeNumberToWordsLocal(dollars)} DOLLARS" : "";
+            string centWords = cents > 0 ? $"{ConvertWholeNumberToWordsLocal(cents)} CENTS" : "";
 
             return string.IsNullOrWhiteSpace(centWords) ? dollarWords : $"{dollarWords} AND {centWords}";
         }
 
-        private static string ConvertWholeNumberToWords(long number)
+        private static string ConvertWholeNumberToWordsLocal(long number)
         {
             if (number == 0) return Units[0];
 
@@ -40,7 +51,7 @@
                 var n = number % 1000;
                 if (n > 0)
                 {
-                    var groupWords = ConvertHundredsToWords(n);
+                    var groupWords = ConvertHundredsToWordsLocal(n);
                     words = $"{groupWords} {Thousands[place]} {words}".Trim();
                 }
                 place++;
@@ -50,7 +61,7 @@
             return words.Trim();
         }
          
-        private static string ConvertHundredsToWords(long number)
+        private static string ConvertHundredsToWordsLocal(long number)
         {
             var words = "";
 
@@ -78,6 +89,83 @@
 
             return words.Trim();
         }
+
+
+
+        private string GetWordDB(string fallbackWord, string category)
+        {
+            var key = $"{fallbackWord}_{category}";
+            if (_wordCache.TryGetValue(key, out var cachedWord))
+            {
+                return cachedWord;
+            }
+            return fallbackWord;
+        }
+
+        public string ConvertToWordsDB(decimal number)
+        {
+            if (number == 0) return "ZERO DOLLARS";
+
+            var dollars = (long)number;
+            var cents = (long)((number - dollars) * 100);
+
+            string dollarWords = dollars > 0 ? $"{ConvertWholeNumberToWordsDB(dollars)} DOLLARS" : "";
+            string centWords = cents > 0 ? $"{ConvertWholeNumberToWordsDB(cents)} CENTS" : "";
+
+            return string.IsNullOrWhiteSpace(centWords) ? dollarWords : $"{dollarWords} AND {centWords}";
+        }
+
+        private string ConvertWholeNumberToWordsDB(long number)
+        {
+            if (number == 0) return "ZERO";
+
+            var words = "";
+            var place = 0;
+
+            do
+            {
+                var n = number % 1000;
+                if (n > 0)
+                {
+                    var groupWords = ConvertHundredsToWordsDB(n);
+                    words = $"{groupWords} {Thousands[place]} {words}".Trim();
+                }
+                place++;
+                number /= 1000;
+            } while (number > 0);
+
+            return words.Trim();
+        }
+
+        private string ConvertHundredsToWordsDB(long number)
+        {
+            var words = "";
+
+            if (number > 99)
+            {
+                words += $"{GetWordDB(Units[number / 100], "Units")} HUNDRED AND ";
+                number %= 100;
+            }
+
+            if (number > 19)
+            {
+                words += $"{GetWordDB(Tens[number / 10], "Tens")} ";
+                number %= 10;
+            }
+            else if (number > 9)
+            {
+                words += $"{GetWordDB(Teens[number - 10], "Teens")} ";
+                return words.Trim();
+            }
+
+            if (number > 0)
+            {
+                words += GetWordDB(Units[number], "Units");
+            }
+
+            return words.Trim();
+        }
+
     }
 
 }

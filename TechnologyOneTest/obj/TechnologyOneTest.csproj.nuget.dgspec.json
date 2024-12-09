@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj": {}
+    "C:\\Users\\Development\\Desktop\\TechnologyOne Repo\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj": {
+    "C:\\Users\\Development\\Desktop\\TechnologyOne Repo\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj",
+        "projectUniqueName": "C:\\Users\\Development\\Desktop\\TechnologyOne Repo\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj",
         "projectName": "TechnologyOneTest",
-        "projectPath": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj",
+        "projectPath": "C:\\Users\\Development\\Desktop\\TechnologyOne Repo\\TechnologyOneTest\\TechnologyOneTest\\TechnologyOneTest.csproj",
         "packagesPath": "C:\\Users\\Development\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\obj\\",
+        "outputPath": "C:\\Users\\Development\\Desktop\\TechnologyOne Repo\\TechnologyOneTest\\TechnologyOneTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

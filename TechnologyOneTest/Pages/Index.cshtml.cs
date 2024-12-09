@@ -10,15 +10,18 @@ namespace TechnologyOneTest.Pages
 
         [BindProperty]
         public string Number { get; set; }
-
         public string Result { get; private set; }
+
+        [BindProperty]
+        public string NumberDB { get; set; }
+        //public string ResultDB { get; private set; }
 
         public IndexModel(ApiService apiService)
         {
             _apiService = apiService;
         }
 
-        public async Task<IActionResult> OnPostConvertNumberAsync()
+        public async Task<IActionResult> OnPostConvertNumberLocalAsync()
         {
             if (string.IsNullOrWhiteSpace(Number))
             {
@@ -28,7 +31,7 @@ namespace TechnologyOneTest.Pages
 
             try
             {
-                Result = await _apiService.ConvertNumberToWordsAsync(Number);
+                Result = await _apiService.ConvertNumberToWordsLocalAsync(Number);
             }
             catch (Exception ex)
             {
@@ -38,24 +41,25 @@ namespace TechnologyOneTest.Pages
             return Page();
         }
 
-        //private readonly ILogger<IndexModel> _logger;
-        //private readonly IConfiguration _configuration;
+        public async Task<IActionResult> OnPostConvertNumberDBAsync()
+        {
+            if (string.IsNullOrWhiteSpace(NumberDB))
+            {
+                ModelState.AddModelError("", "Please enter a valid number.");
+                return Page();
+            }
 
-        //public string BaseUrl { get; private set; }
+            try
+            {
+                Result = await _apiService.ConvertNumberToWordsDBAsync(NumberDB);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error: {ex.Message}");
+            }
 
-
-        //public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
-        //{
-        //    _logger = logger;
-        //    _configuration = configuration;
-
-        //}
-
-
-        //public void OnGet()
-        //{
-        //    BaseUrl = _configuration["AppSettings:BaseUrl"];
-        //}
+            return Page();
+        }
 
     }
 }
