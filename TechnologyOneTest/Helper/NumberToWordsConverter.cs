@@ -21,9 +21,17 @@
 
         public NumberToWordsConverter(ApplicationDbContext context)
         {
-            _context = context;
-            _wordCache = _context.NumberWords
-                .ToDictionary(w => $"{w.Word}_{w.Category}", w => w.Word);
+            try
+            {
+                _context = context;
+                _wordCache = _context.NumberWords
+                    .ToDictionary(w => $"{w.Word}_{w.Category}", w => w.Word);
+
+            }
+            catch (Exception ex) 
+            {
+                throw new ApplicationException("An error occurred while initializing the NumberToWordsConverter.", ex);
+            }
         }
 
         public static string ConvertToWordsLocal(decimal number)
