@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\helper\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\helper\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\helper\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\helper\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\helper\\apihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\helper\\apihandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\helper\\numbertowordsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\helper\\numbertowordsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|c:\\users\\development\\desktop\\technologyone test\\technologyonetest\\technologyonetest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B81E10AF-20D0-431F-A718-41E3654CB614}|TechnologyOneTest\\TechnologyOneTest.csproj|solutionrelative:technologyonetest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\ApiService.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Helper\\ApiService.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\ApiService.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Helper\\ApiService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAB0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T08:40:51.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\AppSettings.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Helper\\AppSettings.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\AppSettings.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Helper\\AppSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T08:35:44.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Pages\\Index.cshtml",
+              "RelativeToolTip": "TechnologyOneTest\\Pages\\Index.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEgAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-07T07:24:25.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Pages\\Index.cshtml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T00:13:25.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\ApiHandler.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Helper\\ApiHandler.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\ApiHandler.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Helper\\ApiHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T02:32:30.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NumberToWordsConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\NumberToWordsConverter.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Helper\\NumberToWordsConverter.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Helper\\NumberToWordsConverter.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Helper\\NumberToWordsConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T07:21:14.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\appsettings.json",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\appsettings.json",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\appsettings.json",
+              "RelativeToolTip": "TechnologyOneTest\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-07T07:07:01.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Program.cs",
+              "RelativeDocumentMoniker": "TechnologyOneTest\\Program.cs",
+              "ToolTip": "C:\\Users\\Development\\Desktop\\TechnologyOne Test\\TechnologyOneTest\\TechnologyOneTest\\Program.cs",
+              "RelativeToolTip": "TechnologyOneTest\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T06:59:45.607Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
