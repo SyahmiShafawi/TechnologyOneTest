@@ -1,0 +1,17 @@
+# Ignore object and assembly files
+*.obj
+*.dll
+*.pdb
+
+# Ignore build and debug directories
+/obj/
+/bin/
+/Debug/
+/Release/
+
+# Ignore NuGet cache and other package-related files
+.nuget/
+project.assets.json
+project.nuget.cache
+TechnologyOneTest.obj/
+TechnologyOneTest/bin/
