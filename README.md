@@ -38,11 +38,10 @@ Usage
 
 Code Structure
  Backend
- - Controllers/ConversionController.cs: Handles API requests for number conversion.
- - Services/NumberToWordsService.cs: Contains the logic to convert numbers to words.
- - Models/NumberWord.cs: Represents the data model for caching (if database is used).
+ - Helper/ApiService.cs: Handles API requests for number conversion.
+ - Helper/NumberToWordsConverter.cs: Contains the logic to convert numbers to words.
 Frontend
- - index.html: HTML page for user interaction.
+ - Index.html: HTML page for user interaction.
 
 
 
